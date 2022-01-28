@@ -46,6 +46,12 @@ namespace ASPProject.Models.OtherServices
             return repo.GetCategories().ToList();
         }
 
+        public List<Category> GetProductsForCategories()
+        {
+            var prodcat = repo.GetProductsForCategory();
+            return prodcat.ToList();
+        }
+
         public void Update(CategoryBlueprint category)
         {
             var categ = GetById(category.Id);

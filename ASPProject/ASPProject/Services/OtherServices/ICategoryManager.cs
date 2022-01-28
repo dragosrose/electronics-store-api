@@ -10,6 +10,7 @@ namespace ASPProject.Services.OtherServices
     public interface ICategoryManager
     {
         List<Category> GetCategories();
+        List<Category> GetProductsForCategories();
         Category GetById(int id);
         void Create(CategoryBlueprint category);
         void Update(CategoryBlueprint category);

@@ -10,6 +10,7 @@ namespace ASPProject.Services.OtherServices
     public interface IOrderManager
     {
         List<Order> GetOrders();
+        List<object> GetOrdersWithProducts();
         Order GetById(int id);
         void Create(OrderBlueprint order);
         void Update(OrderBlueprint order);

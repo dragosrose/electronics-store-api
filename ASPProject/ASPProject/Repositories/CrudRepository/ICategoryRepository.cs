@@ -13,5 +13,6 @@ namespace ASPProject.Repositories.CrudRepository
         void Create(Category category);
         void Update(Category category);
         void Delete(Category category);
+        IQueryable<Category> GetProductsForCategory();
     }
 }

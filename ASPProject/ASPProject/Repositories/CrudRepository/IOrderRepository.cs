@@ -10,7 +10,7 @@ namespace ASPProject.Repositories.CrudRepository
     public interface IOrderRepository
     {
         IQueryable<Order> GetOrders();
-
+        IQueryable<object> GetOrdersWithProducts();
         void Create(Order order);
         void Update(Order order);
         void Delete(Order order);

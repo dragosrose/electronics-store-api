@@ -28,6 +28,13 @@ namespace ASPProject.Controllers
             return Ok(categ);
         }
 
+        [HttpGet("get_products")]
+        public async Task<IActionResult> GetProductsForCategory()
+        {
+            var prodcat = manager.GetProductsForCategories();
+            return Ok(prodcat);
+        }
+
         [HttpGet("read")]
         public async Task<IActionResult> GetCategories()
         {

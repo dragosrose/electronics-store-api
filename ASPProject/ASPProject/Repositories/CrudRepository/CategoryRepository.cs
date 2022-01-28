@@ -1,6 +1,7 @@
 ﻿using ASPProject.Models;
 using ASPProject.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,12 @@ namespace ASPProject.Repositories.CrudRepository
             return categories;
         }
 
-        
+        public IQueryable<Category> GetProductsForCategory()
+        {
+            var prodcat = GetCategories().Include(x => x.Products);
+            return prodcat;
+        }
+
         public void Update(Category category)
         {
             db.Categories.Update(category);
