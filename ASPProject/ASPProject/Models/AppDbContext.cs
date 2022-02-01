@@ -45,6 +45,7 @@ namespace ASPProject.Models
                 .HasOne(x => x.User)
                 .WithMany(x => x.Order);
 
+            
             builder.Entity<OrderProduct>(op =>
                     {
                         op.HasKey(op => new { op.OrderId, op.ProductId });

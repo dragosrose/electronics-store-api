@@ -8,6 +8,7 @@ namespace ASPProject.Repositories.InterRepository
     public interface IGeneralRepository
     {
         IQueryable<object> GetOrdersWithProducts();
-        void OrderProduct();
+        IQueryable<object> GetProductsFromCategory(int id);
+        
     }
 }

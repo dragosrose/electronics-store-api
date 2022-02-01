@@ -9,5 +9,6 @@ namespace ASPProject.Models.Blueprints
     {
         public int Id { get; set; }
         public DateTime Data { get; set; }
+        public int ProductId { get; set; }
     }
 }

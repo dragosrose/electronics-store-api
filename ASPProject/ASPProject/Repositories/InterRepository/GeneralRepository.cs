@@ -40,9 +40,23 @@ namespace ASPProject.Repositories.InterRepository
             return join;
         }
 
-        public void OrderProduct()
+        public IQueryable<object> GetProductsFromCategory(int id)
         {
-            throw new NotImplementedException();
+            var products = _product.GetProducts();
+            var categories = _category.GetCategories();
+            var join =
+               from p in products
+               join c in categories on p.Category.Id equals c.Id
+               where c.Id == id
+               select new
+               {
+                   p.Name,
+                   p.Price
+               };
+
+            return join;
         }
+
+        
     }
 }

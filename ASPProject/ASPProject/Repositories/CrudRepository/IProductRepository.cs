@@ -9,7 +9,6 @@ namespace ASPProject.Repositories.CrudRepository
     public interface IProductRepository
     {
         IQueryable<Product> GetProducts();
-
         void Create(Product product);
         void Update(Product product);
         void Delete(Product product);

@@ -19,5 +19,11 @@ namespace ASPProject.Services.GeneralServices
 
             return objs.ToList();
         }
+
+        public List<object> GetProductsOfCategory(int id)
+        {
+            var objs = repo.GetProductsFromCategory(id);
+            return objs.ToList();
+        }
     }
 }

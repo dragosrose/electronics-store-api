@@ -20,7 +20,7 @@ namespace ASPProject.Services.OtherServices
             var newOrder = new Order
             {
                 Data = order.Data
-
+                
             };
 
             repo.Create(newOrder);

@@ -27,5 +27,11 @@ namespace ASPProject.Controllers
             var ord = manager.GetOrdersWithProduct();
             return Ok(ord);
         }
+        [HttpGet("prod_from_cat")]
+        public async Task <IActionResult> GetProductsFromCategories([FromRoute] int id)
+        {
+            var prod = manager.GetProductsOfCategory(id);
+            return Ok(prod);
+        }
     }
 }

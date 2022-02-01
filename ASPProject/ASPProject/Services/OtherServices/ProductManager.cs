@@ -11,17 +11,26 @@ namespace ASPProject.Services.OtherServices
     public class ProductManager : IProductManager
     {
         private readonly IProductRepository repo;
-        public ProductManager(IProductRepository productRepository)
+        private readonly ICategoryManager cat;
+        public ProductManager(IProductRepository productRepository, ICategoryManager cat)
         {
             this.repo = productRepository;
+            this.cat = cat;
         }
         public void Create(ProductBlueprint product)
         {
             var newProduct = new Product
             {
                 
-                Name = product.Name
-
+                Name = product.Name,
+                Price = product.Price,
+                Details = new ProductDetails
+                {
+                    Description = product.Description,
+                    Stock = product.Stock
+                },
+                Category = cat.GetById(product.CategoryId)
+                
             };
 
             repo.Create(newProduct);
@@ -48,6 +57,12 @@ namespace ASPProject.Services.OtherServices
         {
             var pr = GetById(product.Id);
             pr.Name = product.Name;
+            pr.Price = product.Price;
+            pr.Details = new ProductDetails
+            {
+                Description = product.Description,
+                Stock = product.Stock
+            };
             repo.Update(pr);
         }
     }

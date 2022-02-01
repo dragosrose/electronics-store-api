@@ -15,15 +15,18 @@ namespace ASPProject.Repositories.CrudRepository
         {
             this.db = context;
         }
+        
         public void Create(Product product)
         {
             db.Products.Add(product);
+            //db.ProductsDetails.Add(productDetails);
             db.SaveChanges();
         }
 
         public void Delete(Product product)
         {
             db.Products.Remove(product);
+            //db.ProductsDetails.Remove(productDetails);
             db.SaveChanges();
         }
 
