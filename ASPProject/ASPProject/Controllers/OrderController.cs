@@ -27,15 +27,7 @@ namespace ASPProject.Controllers
 
             return Ok(ord);
         }
-
-        [HttpGet("full_orders")]
-        [Authorize(Policy = "Admin")]
-        public async Task<IActionResult> GetOrdersWithProducts()
-        {
-            var ord = manager.GetOrdersWithProducts();
-            return Ok(ord);
-        }
-
+                
         [HttpGet("read")]
         public async Task<IActionResult> GetOrders()
         {

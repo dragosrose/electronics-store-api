@@ -44,12 +44,7 @@ namespace ASPProject.Services.OtherServices
             return repo.GetOrders().ToList();
         }
 
-        public List<object> GetOrdersWithProducts()
-        {
-            var objs = repo.GetOrdersWithProducts().ToList();
-            return objs;
-        }
-
+        
         public void Update(OrderBlueprint order)
         {
             var or = GetById(order.Id);

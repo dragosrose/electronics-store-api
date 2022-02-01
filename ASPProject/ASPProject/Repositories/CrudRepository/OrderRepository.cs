@@ -10,11 +10,12 @@ namespace ASPProject.Repositories.CrudRepository
     public class OrderRepository : IOrderRepository
     {
         private readonly AppDbContext db;
-        private readonly IProductRepository repo;
-        public OrderRepository(AppDbContext context, IProductRepository repo)
+        
+                
+        public OrderRepository(AppDbContext context)
         {
             this.db = context;
-            this.repo = repo;
+            
         }
         public void Create(Order order)
         {
@@ -34,26 +35,7 @@ namespace ASPProject.Repositories.CrudRepository
             return orders;
         }
 
-        public IQueryable<object> GetOrdersWithProducts()
-        {
-            var orders = GetOrders();
-            var products = repo.GetProducts();
-            var join = db.OrderProduct.Join(orders, a => a.OrderId, b => b.Id, (a, b) => new
-            {
-                a,
-                b
-            }).Join(products, x => x.a.ProductId, y => y.Id, (x, y) => new 
-            {
-                x.a.OrderId,
-                x.b.Data,
-                y.Id,
-                y.Name
-                
-            });
-
-            return join;
-        }
-
+        
         public void Update(Order order)
         {
             db.Orders.Update(order);

@@ -4,7 +4,9 @@ using ASPProject.Models.Entities;
 using ASPProject.Models.OtherServices;
 using ASPProject.Repositories;
 using ASPProject.Repositories.CrudRepository;
+using ASPProject.Repositories.InterRepository;
 using ASPProject.Seed;
+using ASPProject.Services.GeneralServices;
 using ASPProject.Services.OtherServices;
 using ASPProject.Services.UserService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -99,6 +101,9 @@ namespace ASPProject
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICategoryManager, CategoryManager>();
+
+            services.AddScoped<IGeneralRepository, GeneralRepository>();
+            services.AddScoped<IGeneralManager, GeneralManager>();
 
             services.AddScoped<SeedDb>();
         }

@@ -1,4 +1,5 @@
 ﻿using ASPProject.Repositories;
+using ASPProject.Repositories.CrudRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,6 @@ namespace ASPProject.Repositories
     {
         IUserRepository User { get; }
         ISessionTokenRepository SessionToken { get; }
-
         Task SaveAsync();
     }
 }
