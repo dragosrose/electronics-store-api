@@ -1,3 +1,6 @@
+# Electronics store
+Project for 2nd year webdev course.
+
 ## About the Project
 Backend only representation of an online electronics store.
 
