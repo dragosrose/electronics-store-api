@@ -14,7 +14,7 @@ Features:
   ![database_schema](https://user-images.githubusercontent.com/79592589/159161253-911df2b8-f9fa-483f-84c8-ad4a81b2e5fa.png)
 
 * Authentication and roles (User, Admin)
-* Linq methods
+* Made using Linq, Tasks, ICollection.
 
 
 
